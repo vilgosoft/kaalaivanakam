@@ -308,3 +308,128 @@
     gap: .5rem;
   }
 }
+
+
+/* ============================================================
+   6. LOGIN & FORGOT PASSWORD — no scroll at any size
+   ============================================================ */
+
+/* Kill both scrollbars on the login/forgot-password page */
+._loginPage_1hm1d_1 {
+  min-height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* The card frame must shrink to fit, never push beyond viewport */
+._loginPage__frame_1hm1d_18 {
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide the inner scrollbar — page looks clean, card scrolls if needed */
+._loginPage__frame_1hm1d_18::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card should not force width overflow */
+._loginPage__card_1hm1d_23 {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Inputs must not exceed card width */
+._loginPage__input_1hm1d_146 {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Segment buttons — prevent overflow on narrow screens */
+._loginPage__segment_1hm1d_89 {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+._loginPage__segmentBtn_1hm1d_99 {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Submit button — stay within card */
+._loginPage__submit_1hm1d_293 {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Info box and error — prevent width overflow */
+._loginPage__info_1hm1d_209,
+._loginPage__error_1hm1d_283,
+._loginPage__unifiedHint_1hm1d_124 {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 479.98px) {
+  /* Extra-small screens: tighten spacing to avoid any overflow */
+  ._loginPage__card_1hm1d_23 {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  ._loginPage__title_1hm1d_68 {
+    font-size: 1.4rem;
+  }
+
+  ._loginPage__subtitle_1hm1d_79 {
+    font-size: .8rem;
+  }
+
+  ._loginPage__input_1hm1d_146 {
+    font-size: .875rem;
+    min-height: 2.5rem;
+    padding: .55rem .75rem;
+  }
+
+  ._loginPage__submit_1hm1d_293 {
+    padding: .65rem .75rem;
+    font-size: .875rem;
+    margin-top: 1rem;
+  }
+
+  ._loginPage__label_1hm1d_247 {
+    margin-top: .75rem;
+    font-size: .625rem;
+  }
+
+  ._loginPage__brand_1hm1d_43 {
+    margin-bottom: 1rem;
+  }
+
+  ._loginPage__mark_1hm1d_49 {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: .75rem;
+  }
+
+  ._loginPage__segment_1hm1d_89 {
+    margin-bottom: 1rem;
+  }
+
+  ._loginPage__forgotRow_1hm1d_184 {
+    margin-top: .25rem;
+  }
+
+  ._loginPage__secondaryActions_1hm1d_222 {
+    margin-top: .75rem;
+    font-size: .75rem;
+  }
+}
