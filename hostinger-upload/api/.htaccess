@@ -1,0 +1,7 @@
+# Block direct web access to .env if api/ sits under public_html
+
+<IfModule mod_authz_core.c>
+  <FilesMatch "^\.env">
+    Require all denied
+  </FilesMatch>
+</IfModule>

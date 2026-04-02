@@ -1,2 +1,5 @@
 # Deployment build output
 dist/
+
+# Don't commit .env with real credentials
+hostinger-upload/api/.env

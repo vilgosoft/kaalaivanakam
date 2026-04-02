@@ -1,0 +1,9 @@
+# API public .htaccess — route all requests to index.php
+RewriteEngine On
+
+# If the file or directory exists, serve it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Otherwise route to index.php
+RewriteRule ^ index.php [L,QSA]

@@ -1,0 +1,15 @@
+# Root .htaccess for Hostinger public_html
+# Handles: SPA routing for React frontend + /v1/* rewrite to PHP API
+
+RewriteEngine On
+
+# --- API: route /v1/* requests to the PHP backend ---
+RewriteRule ^v1(/.*)?$ api/public/index.php [L,QSA]
+
+# --- Frontend: serve static files if they exist ---
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# --- Frontend: SPA fallback — send everything else to index.html ---
+RewriteRule ^ index.html [L]
